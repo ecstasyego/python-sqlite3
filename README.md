@@ -17,7 +17,10 @@ sqlite3> .schema
 sqlite3> .quit
 ```
 
-
+```
+sqlite3> ALTER TABLE database_name.table_name RENAME TO new_table_name;
+sqlite3> ALTER TABLE database_name.table_name ADD COLUMN column_def...;
+```
 
 ## Python
 ```python
