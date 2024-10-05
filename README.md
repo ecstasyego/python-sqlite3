@@ -42,6 +42,7 @@ conn.close()
 ```
 
 ### Pandas
+`:memory:`: `sqlite_master`
 ```python
 import sqlite3
 import numpy as np
