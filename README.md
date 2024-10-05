@@ -48,8 +48,8 @@ import numpy as np
 import pandas as pd
 
 conn = sqlite3.connect(':memory:')
-pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE01', conn, index=False)
-pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE02', conn, index=False)
+pd.DataFrame(np.random.randint(0, 5, size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE01', conn, index=False)
+pd.DataFrame(np.random.randint(0, 5, size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE02', conn, index=False)
 pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE03', conn, index=False)
 pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE04', conn, index=False)
 pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE05', conn, index=False)
