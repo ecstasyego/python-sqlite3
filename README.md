@@ -72,6 +72,7 @@ pd.read_sql("""select * from RANDOM_TABLE""", conn)
 conn.close()
 ```
 
+`databases.db`
 ```python
 import sqlite3
 import numpy as np
