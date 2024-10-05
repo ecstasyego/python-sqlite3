@@ -43,20 +43,17 @@ conn.close()
 
 ### Pandas
 ```python
-import pandas as pd
 import sqlite3
+import numpy as np
+import pandas as pd
 
 conn = sqlite3.connect(':memory:')
-conn.execute("""
-    CREATE TABLE COMPANY
-        (ID INT PRIMARY KEY NOT NULL
-        , NAME TEXT NOT NULL
-        , AGE INT NOT NULL
-        , ADDRESS CHAR(50)
-        , SALARY REAL);
-""")
-df = pd.read_sql("SELECT * FROM COMPANY", conn, index_col=None)
-conn.close()
+pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE01', conn, index=False)
+pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE02', conn, index=False)
+pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE03', conn, index=False)
+pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE04', conn, index=False)
+pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE05', conn, index=False)
+pd.read_sql("""select * from sqlite_master""", conn); conn.close()
 ```
 
 
