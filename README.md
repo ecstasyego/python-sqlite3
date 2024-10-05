@@ -53,7 +53,7 @@ pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABL
 pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE03', conn, index=False)
 pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE04', conn, index=False)
 pd.DataFrame(np.random.normal(size=(30, 5)), columns=list('ABCDE')).to_sql('TABLE05', conn, index=False)
-pd.read_sql("""select * from sqlite_master""", conn); conn.close()
+display(pd.read_sql("""select * from sqlite_master""", conn)); conn.close()
 ```
 
 
