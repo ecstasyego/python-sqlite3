@@ -58,3 +58,19 @@ conn.execute("""
 df = pd.read_sql("SELECT * FROM COMPANY", conn, index_col=None)
 conn.close()
 ```
+
+
+```python
+import sqlite3
+import numpy as np
+import pandas as pd
+
+conn = sqlite3.connect('random.db')
+data = np.random.normal(size=(30, 5))
+pd.DataFrame(data=data, columns=list('ABCDE')).to_sql('RANDOM_TABLE', conn, index=False)
+conn.close()
+
+conn = sqlite3.connect('random.db')
+pd.read_sql("""select * from RANDOM_TABLE""", conn)
+conn.close()
+```
