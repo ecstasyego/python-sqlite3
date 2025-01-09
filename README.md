@@ -1,4 +1,12 @@
 # python-sqlite3
+`query:syntax`
+```
+# SYNTAX ORDER
+SELECT * FROM * LEFT JOIN * ON * WHERE * GROUP BY * HAVING * ORDER BY *
+
+# EXECUTION ORDER
+FROM > ON > JOIN > WHERE > GROUP BY > HAVING > SELECT > DISTINCT > ORDER BY
+```
 
 ## Database
 ```bash
